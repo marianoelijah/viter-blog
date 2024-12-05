@@ -5,7 +5,8 @@
 @tailwind utilities;
 
 :root {
-
+    --myred: 227, 24, 55;
+    --myyellow: 215, 168, 58;
     --accent: 228, 10, 19;
     --light: 255, 255, 255;
     --dark: 54, 54, 54;
@@ -21,7 +22,8 @@
   }
   
   .dark {
-
+    --myred: 227, 24, 55;
+    --myyellow: 215, 168, 58;
     --accent: 228, 10, 19;
     --light: 64, 64, 64;
     --primary: 13, 17, 23;
@@ -38,7 +40,7 @@
 
 @layer base {
     body {
-        @apply text-black  font-['Roboto'] leading-tight overflow-x-hidden p-2;
+        @apply text-black  font-['Roboto'] leading-tight overflow-x-hidden;
     }
 
     h1, h2, h3, h4, h5 {

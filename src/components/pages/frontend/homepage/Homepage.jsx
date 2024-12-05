@@ -9,6 +9,7 @@ import News from './News'
 
 const Homepage = () => {
   return (
+    
     <div className='p-4 border border-black m-4'>
       <Header />
       <Banner />
