@@ -14,11 +14,9 @@ const ModalValidation = () => {
           <div className="modal-body p-2 py-4 text-center">
             <Info className="text-info mx-auto mb-4" size={40} />
             <h5>Validation Issue</h5>
-            <p className="my-5 text-center">
-              The title already exist!
-              </p>
-            <button className="btn btn-info w-full justify-center" 
-            onClick={handleClose}>Okay</button>
+            <p className="my-5 text-center">The title already exist!</p>
+
+            <button className="btn btn-info w-full justify-center" onClick={handleClose}>Okay</button>
           </div>
         </div>
       </ModalWrapper>

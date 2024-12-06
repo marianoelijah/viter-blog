@@ -1,7 +1,7 @@
 import { Trash2, X } from "lucide-react";
 import React from "react";
 import ModalWrapper from "./ModalWrapper";
-import SpinnerButton from "../spinners/SpinnerButton";
+
 import { StoreContext } from "@/components/store/storeContext";
 import { setIsDelete } from "@/components/store/storeAction";
 
@@ -22,7 +22,7 @@ const ModalDelete = () => {
           </div>
           <div className="modal-body p-2 py-4">
             <p className="mb-0 text-center">
-              Are you sure you want to remove this blog?
+              Are you sure you want to remove this movie?
             </p>
             <div className="flex justify-end gap-3 mt-5">
               <button className="btn btn-alert">

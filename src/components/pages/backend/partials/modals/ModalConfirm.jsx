@@ -6,6 +6,30 @@ import { StoreContext } from "@/components/store/storeContext";
 
 const ModalConfirm = () => {
   const { dispatch } = React.useContext(StoreContext);
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation({
+    mutationFn: (values) => queryData(mysqlApiArchive, "put", values),
+    onSuccess: (data) => {
+      queryClient.invalidateQueries({ queryKey: [queryKey] });
+
+      if (!data.success) {
+        dispatch(setValidate(true));
+        dispatch(setMessage(data.error));
+      } else {
+        dispatch(setIsConfirm(false));
+        dispatch(setSuccess(true));
+        dispatch(setMessage("Record updated"));
+      }
+    },
+  });
+
+  const handleYes = async () => {
+    mutation.mutate({
+      isActive: active ? 1 : 0,
+    });
+  };
+
   const handleClose = () => dispatch(setIsConfirm(false));
 
   return (
@@ -21,7 +45,7 @@ const ModalConfirm = () => {
           </div>
           <div className="modal-body p-2 py-4">
             <p className="mb-0 text-center">
-              Are you sure you want to archive this blog?
+              Are you sure you want to archive this movie?
             </p>
             <div className="flex justify-end gap-3 mt-5">
               <button className="btn btn-warning">Archive</button>

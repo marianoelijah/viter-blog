@@ -39,6 +39,10 @@
 
 
 @layer base {
+  html {
+    @apply h-full;
+  }
+  
     body {
         @apply text-black  font-['Roboto'] leading-tight overflow-x-hidden;
     }
